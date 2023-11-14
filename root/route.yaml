@@ -1,0 +1,15 @@
+kind: HTTPRoute
+apiVersion: gateway.networking.k8s.io/v1beta1
+metadata:
+  name: where-route
+spec:
+ parentRefs:
+ - kind: Gateway
+   name: servicemesh-cloud-gw
+   namespace: asm-ingress
+ hostnames:
+ - "*"
+ rules:
+ - backendRefs:
+   - name: whereami-v1
+     port: 8080
