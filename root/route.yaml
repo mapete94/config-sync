@@ -8,8 +8,6 @@ spec:
  - kind: Gateway
    name: servicemesh-cloud-gw
    namespace: asm-ingress
- hostnames:
- - "*"
  rules:
  - backendRefs:
    - name: whereami-v1
